@@ -20,6 +20,7 @@ const Navbar = () => {
                 <NavigationMenu className='hidden lg:flex'>
                     <NavigationMenuList>
                         <NavigationMenuItem className='flex items-center'>
+                            
                             <NavigationMenuLink href='/news' className={`${pathname === '/news' ? 'text-red-500 font-semibold':''}`}>News</NavigationMenuLink>
                             <NavigationMenuLink href='/services' className={`${pathname === '/services' ? 'text-red-500 font-semibold':''}`}>
                             <NavigationMenuTrigger>Services</NavigationMenuTrigger>

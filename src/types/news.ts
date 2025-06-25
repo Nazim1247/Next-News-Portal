@@ -10,3 +10,7 @@ export interface NewsItem {
     source: string;
     categories: string;
 }
+
+export interface NewsCardProps {
+    item: NewsItem
+}

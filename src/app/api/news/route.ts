@@ -22,3 +22,18 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
+export async function GET() {
+  try {
+    await connectDB();
+
+    const news = await NewsModel.find().sort({ published: -1 }); // latest first
+
+    return NextResponse.json({ success: true, data: news });
+  } catch (error: any) {
+    return NextResponse.json(
+      { success: false, message: error.message },
+      { status: 500 }
+    );
+  }
+}
