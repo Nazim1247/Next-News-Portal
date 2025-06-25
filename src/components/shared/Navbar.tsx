@@ -39,6 +39,7 @@ const Navbar = () => {
                             </NavigationMenuLink>
  <NavigationMenuLink href='/about' className={`${pathname === '/about' ? 'text-red-500 font-semibold':''}`}>About</NavigationMenuLink>                     
  <NavigationMenuLink href='/contact' className={`${pathname === '/contact' ? 'text-red-500 font-semibold':''}`}>Contact</NavigationMenuLink>                     
+ <NavigationMenuLink href='/news/create' className={`${pathname === '/news/create' ? 'text-red-500 font-semibold':''}`}>Contact a News</NavigationMenuLink>                     
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
