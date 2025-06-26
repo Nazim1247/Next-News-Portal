@@ -8,7 +8,7 @@ const NewsCard = ({item}: NewsCardProps) => {
     return (
         <div className='border p-4 rounded-md shadow-md'>
            <Link href={'/'}>
-           <Image src={item?.imageUrl} width={400} height={400} alt='News img'/>
+           <Image src={item?.imageUrl} width={200} height={200} alt='News img'/>
            </Link>
            <div className='space-y-2'>
             <h2 className='text-xl font-semibold'>{item?.title}</h2>

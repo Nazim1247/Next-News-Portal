@@ -1,5 +1,6 @@
 'use client';
 
+import NewsList from '@/components/news/NewsList';
 import { useEffect, useState } from 'react';
 
 interface NewsItem {
@@ -63,6 +64,7 @@ export default function NewsPage() {
         </div>
       ))}
     </div>
+    <NewsList/>
     </div>
   );
 }
