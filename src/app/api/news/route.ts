@@ -34,7 +34,7 @@ export async function GET(request: NextRequest) {
     const filter: any = {};
 
     if (search) {
-      filter.title = { $regex: search, $options: 'i' }; // case-insensitive search
+      filter.title = { $regex: search, $options: 'i' };
     }
 
     if (category) {

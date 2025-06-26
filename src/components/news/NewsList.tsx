@@ -27,7 +27,7 @@ const NewsList = () => {
 
             <div className='flex flex-col md:flex-row items-center justify-between gap-4 mb-4'>
                 <SearchBar onSearch={setSearch}/>
-                <CategoryFilter/>
+                <CategoryFilter onCategoryChange={setCategory}/>
             </div>
 
            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
