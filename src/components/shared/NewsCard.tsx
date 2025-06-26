@@ -12,7 +12,7 @@ const NewsCard = ({item}: NewsCardProps) => {
            </Link>
            <div className='space-y-2'>
             <h2 className='text-xl font-semibold'>{item?.title}</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt est expedita culpa doloribus, similique amet tenetur dolores quia officia quis doloremque, optio error facilis quas laudantium unde aspernatur, maxime ratione?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt est expedita culpa doloribus, similique amet tenetur dolores quia officia quis doloremque, optio error facilis quas laudantium unde aspernatur,</p>
             <Link href={`/news/${item?._id}`}><Button >Read More</Button></Link>
             </div> 
         </div>
