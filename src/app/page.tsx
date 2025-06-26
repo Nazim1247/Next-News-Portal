@@ -4,7 +4,9 @@ import { NewsItem } from "@/types/news";
 
 
 export default async function Home() {
-  const res = await fetch('http://localhost:3000/api/news')
+  const res = await fetch('http://localhost:3000/api/news', {
+    cache: "force-cache"
+  })
   const json = await res.json();
   const news = json.data;
  
