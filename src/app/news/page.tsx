@@ -35,7 +35,7 @@ export default function NewsPage() {
 
   return (
     <div className='max-w-6xl mx-auto my-6'>
-      <h1 className="text-2xl mb-4 font-bold text-center">Latest News</h1>
+      {/* <h1 className="text-2xl mb-4 font-bold text-center">Latest News</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {newsList.map((item) => (
         <div
@@ -63,7 +63,7 @@ export default function NewsPage() {
           </a>
         </div>
       ))}
-    </div>
+    </div> */}
     <NewsList/>
     </div>
   );

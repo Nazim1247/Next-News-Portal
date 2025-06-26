@@ -20,13 +20,13 @@ const NewsList = () => {
         getNews();
     },[category, search]);
 
-    console.log(news);
+    // console.log(news);
     return (
         <div className='max-w-6xl mx-auto my-6'>
             <h1 className="text-2xl mb-4 font-bold text-center">Latest News</h1>
 
-            <div>
-                <SearchBar/>
+            <div className='flex flex-col md:flex-row items-center justify-between gap-4 mb-4'>
+                <SearchBar onSearch={setSearch}/>
                 <CategoryFilter/>
             </div>
 
