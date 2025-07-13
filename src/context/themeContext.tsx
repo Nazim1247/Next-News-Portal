@@ -2,7 +2,7 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
 
-interface ThemeContextType{
+export interface ThemeContextType{
     isDarkMode: boolean;
     toggleTheme: ()=> void;
 }

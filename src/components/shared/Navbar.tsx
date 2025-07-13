@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Link from 'next/link';
 import React, { useContext } from 'react';
@@ -16,34 +16,42 @@ import { IoMdMenu } from 'react-icons/io';
 import { usePathname } from 'next/navigation';
 import { ThemeContext } from '@/context/themeContext';
 
+// Optional: Define ThemeContextType if not defined
+interface ThemeContextType {
+  isDarkMode: boolean;
+  toggleTheme: () => void;
+}
+
 const Navbar = () => {
   const pathname = usePathname();
-  const { isDarkMode, toggleTheme }: any = useContext(ThemeContext);
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext) as ThemeContextType;
+
+  const navLinkClass = (path: string) =>
+    pathname === path ? 'text-red-500 font-semibold' : '';
 
   return (
     <header className={`py-4 shadow-md ${isDarkMode ? 'bg-gray-900 text-white' : ''}`}>
       <nav className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div>
-          <Link href="/">Daily News</Link>
+          <Link href="/" className="text-xl font-bold">
+            Daily News
+          </Link>
         </div>
 
         {/* Desktop Menu */}
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList className="flex gap-4 items-center">
-            {/* Regular Links */}
+            {/* Static Links */}
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link
-                  href="/news"
-                  className={`${pathname === '/news' ? 'text-red-500 font-semibold' : ''}`}
-                >
+                <Link href="/news" className={navLinkClass('/news')}>
                   News
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
 
-            {/* Services Dropdown */}
+            {/* Dropdown Menu */}
             <NavigationMenuItem>
               <NavigationMenuTrigger>Services</NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -73,34 +81,24 @@ const Navbar = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
 
+            {/* Other Links */}
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link
-                  href="/about"
-                  className={`${pathname === '/about' ? 'text-red-500 font-semibold' : ''}`}
-                >
+                <Link href="/about" className={navLinkClass('/about')}>
                   About
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
-
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link
-                  href="/contact"
-                  className={`${pathname === '/contact' ? 'text-red-500 font-semibold' : ''}`}
-                >
+                <Link href="/contact" className={navLinkClass('/contact')}>
                   Contact
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
-
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link
-                  href="/news/create"
-                  className={`${pathname === '/news/create' ? 'text-red-500 font-semibold' : ''}`}
-                >
+                <Link href="/news/create" className={navLinkClass('/news/create')}>
                   Create a News
                 </Link>
               </NavigationMenuLink>
@@ -110,17 +108,17 @@ const Navbar = () => {
 
         {/* Theme Switch & Button */}
         <div className="hidden lg:flex items-center gap-4">
-          <div className="flex items-center gap-2" onClick={toggleTheme}>
+          <div className="flex items-center gap-2 cursor-pointer" onClick={toggleTheme}>
             <span>Dark Mode</span>
             <Switch checked={isDarkMode} />
           </div>
-          <Button variant="outline">Button</Button>
+          <Button variant="outline">Login</Button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Button */}
         <div className="lg:hidden">
-          <Button variant="outline">
-            <IoMdMenu />
+          <Button variant="outline" size="icon">
+            <IoMdMenu size={20} />
           </Button>
         </div>
       </nav>

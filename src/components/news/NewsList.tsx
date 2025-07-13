@@ -1,7 +1,7 @@
 "use client";
 import { fetchNews } from '@/lib/fetchNews';
 import { NewsItem } from '@/types/news';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import NewsCard from '../shared/NewsCard';
 import SearchBar from './SearchBar';
 import CategoryFilter from './CategoryFilter';
